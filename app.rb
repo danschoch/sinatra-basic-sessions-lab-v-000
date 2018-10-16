@@ -3,7 +3,7 @@ require_relative 'config/environment'
 class App < Sinatra::Base
 
   configure do
-    enable :sessions, 
+    enable :sessions,
   end
 
   get '/' do
@@ -11,10 +11,10 @@ class App < Sinatra::Base
   end
 
   post '/checkout' do
+    @item = params[:item]
+
     @session = session
     @session["item"] = @item
-
-    @item = params[:item]
 
     erb :checkout
   end
