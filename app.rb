@@ -15,5 +15,7 @@ class App < Sinatra::Base
     @session = session
 
     @item = params[:item]
+
+    erb :checkout
   end
 end
